@@ -7,3 +7,44 @@
 2021-04-03 13:29:22,413 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:54]
 2021-04-03 14:32:48,495 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:54]
 2021-04-03 15:31:08,052 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:54]
+2021-04-03 22:26:02,866 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:40:20,998 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:40:25,834 ERROR: Exception on /reset_password_request [GET] [in c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2021-04-05 21:41:38,626 ERROR: Exception on /reset_password_request [GET] [in c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2021-04-05 21:44:01,373 ERROR: Exception on /reset_password_request [GET] [in c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "c:\users\vo xuan anh\desktop\flask_tut\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2097, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The function either returned None or ended without a return statement.
+2021-04-05 21:45:46,432 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:52:10,912 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:54:58,809 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:57:34,419 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 21:59:11,872 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]
+2021-04-05 22:35:42,385 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:55]

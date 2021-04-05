@@ -1,9 +1,10 @@
 from config import Config
 from flask import Flask
-from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_login import LoginManager
+from flask_mail import Mail
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
+from logging.handlers import SMTPHandler, RotatingFileHandler
 
 import logging
 import os
@@ -22,8 +23,8 @@ login = LoginManager(app)
 # requiring user to login
 login.login_view = 'login'
 
-# print(__name__)
-from app import routes, models, errors
+# email support 
+mail = Mail(app)
 
 if not app.debug:
     # email-based logging
@@ -54,3 +55,6 @@ if not app.debug:
     app.logger.info('Microblog startup')
 
 
+
+# leaving here to prevent circular import
+from app import routes, models, errors
