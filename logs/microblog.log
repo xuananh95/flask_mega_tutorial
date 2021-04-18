@@ -94,3 +94,8 @@ jinja2.exceptions.UndefinedError: 'get_flashed_message' is undefined
 2021-04-06 10:04:56,567 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:59]
 2021-04-18 21:44:11,292 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:63]
 2021-04-18 21:52:49,232 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:63]
+2021-04-18 23:44:39,243 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:54]
+2021-04-18 23:46:43,749 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:54]
+2021-04-18 23:47:04,305 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:54]
+2021-04-18 23:47:14,501 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:54]
+2021-04-19 00:15:08,345 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:54]

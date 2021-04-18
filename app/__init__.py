@@ -1,5 +1,6 @@
 from config import Config
-from flask import Flask
+from flask import Flask, request
+from flask_babel import Babel, lazy_gettext as _l
 from flask_bootstrap import Bootstrap
 from flask_login import LoginManager
 from flask_mail import Mail
@@ -11,31 +12,20 @@ from logging.handlers import SMTPHandler, RotatingFileHandler
 import logging
 import os
 
+
 app = Flask(__name__)
-
-# load file config
 app.config.from_object(Config)
-
-# create + initialize instance cho DB va DB migration
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-
-# login 
 login = LoginManager(app)
-# requiring user to login
 login.login_view = 'login'
-
-# email support 
+login.login_message = _l('Please log in to access this page.')
 mail = Mail(app)
-
-# for bootstrap
 bootstrap = Bootstrap(app)
-
-# for flask-moment
 moment = Moment(app)
+babel = Babel(app)
 
 if not app.debug:
-    # email-based logging
     if app.config['MAIL_SERVER']:
         auth = None
         if app.config['MAIL_USERNAME'] or app.config['MAIL_PASSWORD']:
@@ -50,10 +40,11 @@ if not app.debug:
             credentials=auth, secure=secure)
         mail_handler.setLevel(logging.ERROR)
         app.logger.addHandler(mail_handler)
-    # file-based logging
+
     if not os.path.exists('logs'):
         os.mkdir('logs')
-    file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240, backupCount=10)
+    file_handler = RotatingFileHandler('logs/microblog.log', maxBytes=10240,
+                                       backupCount=10)
     file_handler.setFormatter(logging.Formatter(
         '%(asctime)s %(levelname)s: %(message)s [in %(pathname)s:%(lineno)d]'))
     file_handler.setLevel(logging.INFO)
@@ -63,6 +54,12 @@ if not app.debug:
     app.logger.info('Microblog startup')
 
 
+@babel.localeselector
+def get_locale():
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
-# leaving here to prevent circular import
+    # for testing
+    # return 'es'
+
+
 from app import routes, models, errors
