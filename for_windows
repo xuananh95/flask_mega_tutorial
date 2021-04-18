@@ -1,0 +1,4 @@
+Set-ExecutionPolicy Unrestricted -Scope Process
+
+# for mail testing
+python -m smtpd -n -c DebuggingServer localhost:8025
