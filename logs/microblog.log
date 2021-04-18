@@ -92,3 +92,5 @@ Traceback (most recent call last):
     {% block content %}
 jinja2.exceptions.UndefinedError: 'get_flashed_message' is undefined
 2021-04-06 10:04:56,567 INFO: Microblog startup [in C:\Users\Vo Xuan Anh\Desktop\flask_tut\flask_mega_tutorial\app\__init__.py:59]
+2021-04-18 21:44:11,292 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:63]
+2021-04-18 21:52:49,232 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:63]
