@@ -1,1 +1,72 @@
-2021-04-19 21:32:48,764 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:75]
+2021-04-20 16:02:30,032 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\main\routes.py", line 152, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 153, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1662, in search
+    return self.transport.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 415, in perform_request
+    raise e
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 381, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 275, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\base.py", line 322, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-04-20 16:06:56,711 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:77]
+2021-04-20 16:10:08,414 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:77]
+2021-04-20 16:10:15,626 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\main\routes.py", line 152, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 153, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1662, in search
+    return self.transport.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 415, in perform_request
+    raise e
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 381, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 275, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\base.py", line 322, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
