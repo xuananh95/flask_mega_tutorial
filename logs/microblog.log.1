@@ -1,81 +1,4 @@
-2021-04-20 15:51:03,120 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
-Traceback (most recent call last):
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connection.py", line 169, in _new_conn
-    conn = connection.create_connection(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\util\connection.py", line 96, in create_connection
-    raise err
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\util\connection.py", line 86, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 251, in perform_request
-    response = self.pool.urlopen(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 755, in urlopen
-    retries = retries.increment(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\util\retry.py", line 506, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\packages\six.py", line 735, in reraise
-    raise value
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 699, in urlopen
-    httplib_response = self._make_request(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connectionpool.py", line 394, in _make_request
-    conn.request(method, url, **httplib_request_kw)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connection.py", line 234, in request
-    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
-  File "C:\Users\xuana\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1240, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "C:\Users\xuana\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1286, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "C:\Users\xuana\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1235, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "C:\Users\xuana\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 1006, in _send_output
-    self.send(msg)
-  File "C:\Users\xuana\AppData\Local\Programs\Python\Python38-32\lib\http\client.py", line 946, in send
-    self.connect()
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connection.py", line 200, in connect
-    conn = self._new_conn()
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\urllib3\connection.py", line 181, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x057A7970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
-    raise value
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "I:\study\workspace\flask\flask_mega_tutorial\app\main\routes.py", line 152, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "I:\study\workspace\flask\flask_mega_tutorial\app\models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "I:\study\workspace\flask\flask_mega_tutorial\app\search.py", line 22, in query_index
-    search = current_app.elasticsearch.search(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 153, in _wrapped
-    return func(*args, params=params, headers=headers, **kwargs)
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1662, in search
-    return self.transport.perform_request(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 413, in perform_request
-    raise e
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 381, in perform_request
-    status, headers_response, data = connection.perform_request(
-  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 264, in perform_request
-    raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x057A7970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x057A7970>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it)
-2021-04-20 16:02:12,632 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+2021-04-20 16:02:30,032 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
 Traceback (most recent call last):
   File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -110,3 +33,81 @@ Traceback (most recent call last):
   File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\base.py", line 322, in _raise_error
     raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
 elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-04-20 16:06:56,711 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:77]
+2021-04-20 16:10:08,414 INFO: Microblog startup [in I:\study\workspace\flask\flask_mega_tutorial\app\__init__.py:77]
+2021-04-20 16:10:15,626 ERROR: Exception on /search [GET] [in i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py:1891]
+Traceback (most recent call last):
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\main\routes.py", line 152, in search
+    posts, total = Post.search(g.search_form.q.data, page,
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\models.py", line 15, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "I:\study\workspace\flask\flask_mega_tutorial\app\search.py", line 22, in query_index
+    search = current_app.elasticsearch.search(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\utils.py", line 153, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\client\__init__.py", line 1662, in search
+    return self.transport.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 415, in perform_request
+    raise e
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\transport.py", line 381, in perform_request
+    status, headers_response, data = connection.perform_request(
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 275, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "i:\study\workspace\flask\flask_mega_tutorial\venv\lib\site-packages\elasticsearch\connection\base.py", line 322, in _raise_error
+    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2021-04-20 16:38:58,264 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-24 22:46:28,275 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-24 22:47:05,230 ERROR: Exception on /user/susan1/popup [GET] [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/main/routes.py", line 85, in user_popup
+    return render_template('user_popup.html', user=user, form=form)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/templating.py", line 138, in render_template
+    ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/environment.py", line 930, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/environment.py", line 883, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/environment.py", line 857, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/loaders.py", line 127, in load
+    code = environment.compile(source, name, filename)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/environment.py", line 638, in compile
+    self.handle_exception(source=source_hint)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/templates/user_popup.html", line 8, in template
+    <a href="{{ url_for('main.user', username=user.username) }]">{{ user.username }}</a>
+jinja2.exceptions.TemplateSyntaxError: unexpected '}'
+2021-05-24 22:47:25,285 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-24 23:15:59,641 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
