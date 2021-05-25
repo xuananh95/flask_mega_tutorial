@@ -1,1 +1,59 @@
 2021-05-24 23:17:59,751 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:09:14,402 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:09:18,541 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:24:13,322 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:24:44,223 ERROR: Exception on /send_message/susan3 [GET] [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/main/routes.py", line 172, in send_message
+    form = MessageForm()
+NameError: name 'MessageForm' is not defined
+2021-05-25 17:35:05,205 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:35:19,439 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:35:35,086 ERROR: Exception on /send_message/susan3 [POST] [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/main/routes.py", line 178, in send_message
+    return redirect(url_for('main_user', username=recipient))
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/helpers.py", line 370, in url_for
+    return appctx.app.handle_url_build_error(error, endpoint, values)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/app.py", line 2216, in handle_url_build_error
+    reraise(exc_type, exc_value, tb)
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/flask/helpers.py", line 357, in url_for
+    rv = url_adapter.build(
+  File "/home/kurai/Desktop/flask_tut/flask_mega_tutorial/venv/lib/python3.9/site-packages/werkzeug/routing.py", line 2179, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.BuildError: Could not build url for endpoint 'main_user' with values ['username']. Did you mean 'main.user' instead?
+2021-05-25 17:36:23,228 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:37:52,362 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:49:19,327 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 17:49:24,240 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
+2021-05-25 19:45:39,394 INFO: Microblog startup [in /home/kurai/Desktop/flask_tut/flask_mega_tutorial/app/__init__.py:77]
